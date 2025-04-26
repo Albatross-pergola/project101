@@ -129,5 +129,41 @@
 			<p><b>Please enable Javascript!</b></p>
 		</noscript>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
+		<script>
+document.addEventListener('contextmenu',function(e){
+    if(location.protocol==='file:'){
+        e.preventDefault();
+        const a=document.querySelectorAll('.gg_context_row');
+        if(a.length>0){
+            a[0].innerText=String.fromCharCode(70,117,108,108,32,83,99,114,101,97,110);
+            a[1].innerHTML=String.fromCharCode(70,97,114,104,97,100);
+        }
+    }
+});
+</script>
+
+<script>
+document.addEventListener('contextmenu',function(e){
+    if(location.protocol==='file:'){
+        e.preventDefault();
+        setTimeout(function(){
+            const b=document.querySelectorAll('.gg_context_row');
+            if(b.length>0){
+                b[0].innerText=atob('RnVsbCBTY3JlYW4=');
+                b[1].innerHTML=atob('RGVzaWduZWQgYnkgRmFyaGFkIEZhcmFoYW5p');
+            }
+            const c=document.querySelector('.gg_contextmenu');
+            if(c&&!c.querySelectorAll('.custom_item').length){
+                let d=document.createElement('div');
+                d.className='gg_context_row custom_item';
+                d.style='text-align: left;margin: 0;padding: 5px 20px;vertical-align: left;cursor: pointer;';
+                d.innerHTML='<a href="'+atob('aHR0cHM6Ly9hbGJhdHJvc3MtcGVyZ29sYS5jb20v')+'" target="_blank" style="color: black; text-decoration: none;">'+atob('QWxiYXRyb3NzLVBlcmdvbGE=')+'</a>';
+                c.appendChild(d);
+            }
+        },200);
+    }
+});
+</script>
+
 	</body>
 </html>
